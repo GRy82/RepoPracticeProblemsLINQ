@@ -43,10 +43,10 @@ namespace PracticeProblemsLINQ
         public static Customer RunProblem3(List<Customer> customers)
         {
             //code
-            List<Customer> customer = customers.Where(c => c.FirstName.Equals("Mike")).ToList<Customer>();
+            Customer customerMike = customers.Single(c => c.FirstName.Equals("Mike"));
 
             //return
-            return customer[0];
+            return customerMike;
         }
 
         #endregion
@@ -58,12 +58,12 @@ namespace PracticeProblemsLINQ
         public static Customer RunProblem4(List<Customer> customers)
         {
             //code
-            List<Customer> customer3 = customers.Where(c => c.Id == 3).ToList();
+            Customer customer3 = customers.Single(c => c.Id == 3);
 
-            customer3[0].FirstName = "William";
-            customer3[0].LastName = "Hung";
+            customer3.FirstName = "William";
+            customer3.LastName = "Hung";
             //return
-            return customer3[0];
+            return customer3;
 
         }
         #endregion
@@ -96,18 +96,18 @@ namespace PracticeProblemsLINQ
         }
         #endregion
 
-        //#region Bonus Problem 1
-        ////(5 points) Bonus Problem 1
-        ////Write a method that takes in a string of letters(i.e. “Terrill”) 
-        ////and returns an alphabetically ordered string corresponding to the letter frequency(i.e. "E1I1L2R2T1")
-        //public static string RunBonusProblem1(string word)
-        //{
-        //    //code
+        #region Bonus Problem 1
+        //(5 points) Bonus Problem 1
+        //Write a method that takes in a string of letters(i.e. “Terrill”) 
+        //and returns an alphabetically ordered string corresponding to the letter frequency(i.e. "E1I1L2R2T1")
+        public static string RunBonusProblem1(string word)
+        {
+            //code
 
-        //    //return
+            //return
 
-        //}
-        //#endregion
+        }
+        #endregion
 
 
     }
