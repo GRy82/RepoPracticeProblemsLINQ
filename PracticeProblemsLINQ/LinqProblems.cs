@@ -43,8 +43,10 @@ namespace PracticeProblemsLINQ
         //public static Customer RunProblem3(List<Customer> customers)
         //{
         //    //code
+        //    var customerMike = customers.Select(c => c.FirstName.Equals("Mike"));
 
         //    //return
+        //    return nameMike;
 
         //}
         //#endregion

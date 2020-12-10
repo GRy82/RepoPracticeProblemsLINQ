@@ -31,16 +31,16 @@ namespace PracticeProblemsLINQ
             Console.WriteLine();
 
 
-            //    //Problem 3 & Problem 4
-            //    List<Customer> customers = new List<Customer>()
+            ////Problem 3 & Problem 4
+            //List<Customer> customers = new List<Customer>()
             //    {
             //        new Customer(1, "Mike", "Rodgers"),
             //        new Customer(2, "Nick", "Allen"),
             //        new Customer(3, "Jason", "Ryan"),
             //        new Customer(4, "Dan", "Laffey")
             //    };
-            //    LinqProblems.RunProblem3(customers);
-            //    LinqProblems.RunProblem4(customers);
+            //LinqProblems.RunProblem3(customers);
+            //LinqProblems.RunProblem4(customers);
 
 
             //    //Problem 5
