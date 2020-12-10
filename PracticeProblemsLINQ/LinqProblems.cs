@@ -58,7 +58,8 @@ namespace PracticeProblemsLINQ
         public static Customer RunProblem4(List<Customer> customers)
         {
             //code
-            List<Customer> customer3 = (from customer in customers where customer.Id == 3 select customer).ToList();
+            List<Customer> customer3 = customers.Where(c => c.Id == 3).ToList();
+
             customer3[0].FirstName = "William";
             customer3[0].LastName = "Hung";
             //return
@@ -67,20 +68,33 @@ namespace PracticeProblemsLINQ
         }
         #endregion
 
-        //#region Problem 5
-        ////(5 points) Problem 5
-        ////Using LINQ, write a method that calculates the class grade average after dropping the lowest grade for each student.
-        ////The method should take in a list of strings of grades (e.g., one string might be "90,100,82,89,55"), 
-        ////drops the lowest grade from each string, averages the rest of the grades from that string, then averages the averages.
-        ////Expected output: 86.125
-        //public static double RunProblem5(List<string> classGrades)
-        //{
-        //    //code
-
-        //    //return
-
-        //}
-        //#endregion
+        #region Problem 5
+        //(5 points) Problem 5
+        //Using LINQ, write a method that calculates the class grade average after dropping the lowest grade for each student.
+        //The method should take in a list of strings of grades (e.g., one string might be "90,100,82,89,55"), 
+        //drops the lowest grade from each string, averages the rest of the grades from that string, then averages the averages.
+        //Expected output: 86.125
+        public static double RunProblem5(List<string> classGrades)
+        {
+            double allGrades = 0;
+            //code
+            foreach(string gradeSet in classGrades)
+            {
+                string[] splitGrades = gradeSet.Split(',');
+                int[] splitGradesInt = new int[5];
+                for (int i = 0; i < 5; i++)
+                {
+                    splitGradesInt[i] = Convert.ToInt32(splitGrades[i]);
+                }
+                List<int> splitGradesList = splitGradesInt.OrderByDescending(s => s).ToList();
+                splitGradesList.RemoveAt(4);
+                allGrades += splitGradesList.Average();
+            }
+            allGrades /= classGrades.Count;
+            //return
+            return allGrades;
+        }
+        #endregion
 
         //#region Bonus Problem 1
         ////(5 points) Bonus Problem 1
