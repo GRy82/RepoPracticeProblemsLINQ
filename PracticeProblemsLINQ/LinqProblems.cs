@@ -37,32 +37,35 @@ namespace PracticeProblemsLINQ
         }
         #endregion
 
-        //#region Problem 3
-        ////(5 points) Problem 3
-        ////Using LINQ, write a method that takes in a list of customers and returns the lone customer who has the name of Mike. 
-        //public static Customer RunProblem3(List<Customer> customers)
-        //{
-        //    //code
-        //    var customerMike = customers.Select(c => c.FirstName.Equals("Mike"));
+        #region Problem 3
+        //(5 points) Problem 3
+        //Using LINQ, write a method that takes in a list of customers and returns the lone customer who has the name of Mike. 
+        public static Customer RunProblem3(List<Customer> customers)
+        {
+            //code
+            List<Customer> customer = customers.Where(c => c.FirstName.Equals("Mike")).ToList<Customer>();
 
-        //    //return
-        //    return nameMike;
+            //return
+            return customer[0];
+        }
 
-        //}
-        //#endregion
+        #endregion
 
-        //#region Problem 4
-        ////(5 points) Problem 4
-        ////Using LINQ, write a method that takes in a list of customers and returns the customer who has an id of 3. 
-        ////Then, update that customer's first name and last name to completely different names and return the newly updated customer from the method.
-        //public static Customer RunProblem4(List<Customer> customers)
-        //{
-        //    //code
+        #region Problem 4
+        //(5 points) Problem 4
+        //Using LINQ, write a method that takes in a list of customers and returns the customer who has an id of 3. 
+        //Then, update that customer's first name and last name to completely different names and return the newly updated customer from the method.
+        public static Customer RunProblem4(List<Customer> customers)
+        {
+            //code
+            List<Customer> customer3 = (from customer in customers where customer.Id == 3 select customer).ToList();
+            customer3[0].FirstName = "William";
+            customer3[0].LastName = "Hung";
+            //return
+            return customer3[0];
 
-        //    //return
-
-        //}
-        //#endregion
+        }
+        #endregion
 
         //#region Problem 5
         ////(5 points) Problem 5

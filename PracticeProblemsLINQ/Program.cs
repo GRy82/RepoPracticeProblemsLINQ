@@ -27,20 +27,24 @@ namespace PracticeProblemsLINQ
             {
                 Console.WriteLine(name);
             }
-            Console.ReadLine();
             Console.WriteLine();
 
 
-            ////Problem 3 & Problem 4
-            //List<Customer> customers = new List<Customer>()
-            //    {
-            //        new Customer(1, "Mike", "Rodgers"),
-            //        new Customer(2, "Nick", "Allen"),
-            //        new Customer(3, "Jason", "Ryan"),
-            //        new Customer(4, "Dan", "Laffey")
-            //    };
-            //LinqProblems.RunProblem3(customers);
-            //LinqProblems.RunProblem4(customers);
+            //Problem 3 & Problem 4
+            List<Customer> customers = new List<Customer>()
+                {
+                    new Customer(1, "Mike", "Rodgers"),
+                    new Customer(2, "Nick", "Allen"),
+                    new Customer(3, "Jason", "Ryan"),
+                    new Customer(4, "Dan", "Laffey")
+                };
+            Customer mike = LinqProblems.RunProblem3(customers);
+            Console.WriteLine(mike.FirstName);
+            Console.WriteLine();
+
+            Customer customer3 = LinqProblems.RunProblem4(customers);
+            Console.WriteLine(customer3.FirstName + " " + customer3.LastName);
+            Console.ReadLine();
 
 
             //    //Problem 5
