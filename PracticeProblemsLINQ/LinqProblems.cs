@@ -80,14 +80,14 @@ namespace PracticeProblemsLINQ
             //code
             foreach(string gradeSet in classGrades)
             {
-                string[] splitGrades = gradeSet.Split(',');
+                string[] splitGrades = gradeSet.Split(',');// 
                 int[] splitGradesInt = new int[5];
                 for (int i = 0; i < 5; i++)
                 {
                     splitGradesInt[i] = Convert.ToInt32(splitGrades[i]);
                 }
                 List<int> splitGradesList = splitGradesInt.OrderByDescending(s => s).ToList();
-                splitGradesList.RemoveAt(4);
+                splitGradesList.Remove(splitGradesList.Min());
                 allGrades += splitGradesList.Average();
             }
             allGrades /= classGrades.Count;
@@ -103,9 +103,16 @@ namespace PracticeProblemsLINQ
         public static string RunBonusProblem1(string word)
         {
             //code
-
+            List<char> terrillName = word.OrderBy(w => w).ToList();
+            List<char> distinctLetters = word.Distinct().OrderBy(s => s).ToList();
+            string returnString = null;
+            foreach(char character in distinctLetters)
+            {
+                int letterFrequency = terrillName.Where(c => c == character).Count();
+                returnString += character.ToString().ToUpper() + letterFrequency;
+            }
             //return
-
+            return returnString;
         }
         #endregion
 

@@ -58,14 +58,16 @@ namespace PracticeProblemsLINQ
 
             double classAverage = LinqProblems.RunProblem5(classgrades);
             Console.WriteLine(classAverage);
+            Console.WriteLine();
+
+
+
+            //--------------------
+            //Bonus Problem 1
+            string letters = "terrill";
+            string countedLettersString = LinqProblems.RunBonusProblem1(letters);
+            Console.WriteLine(countedLettersString);
             Console.ReadLine();
-
-
-
-            //    //--------------------
-            //    //Bonus Problem 1
-            //    string letters = "terrill";
-            //    LinqProblems.RunBonusProblem1(letters);
         }
     }
 }
