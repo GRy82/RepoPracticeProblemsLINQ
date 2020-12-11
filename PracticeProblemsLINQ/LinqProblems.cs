@@ -80,7 +80,7 @@ namespace PracticeProblemsLINQ
             //code
             foreach(string gradeSet in classGrades)
             {
-                string[] splitGrades = gradeSet.Split(',');// 
+                string[] splitGrades = gradeSet.Split(',');
                 int[] splitGradesInt = new int[5];
                 for (int i = 0; i < 5; i++)
                 {
